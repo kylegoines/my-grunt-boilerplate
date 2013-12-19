@@ -3,9 +3,9 @@
 
 Whatever flavor of grunt im into currently.
 
-####I'll learn yeoman later...
+I'll learn yeoman later...
 
-/////////////////////////////////////////
+
 #plugins
 
 ###clear
@@ -17,7 +17,7 @@ Whatever flavor of grunt im into currently.
 ###uglify
 
 ###concat
-////////////////////////////////////////
+
 
 #commands
 
