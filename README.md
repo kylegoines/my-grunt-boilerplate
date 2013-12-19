@@ -1,5 +1,4 @@
 #my-grunt-boilerplate
-====================
 
 Whatever flavor of grunt im into currently.
 
