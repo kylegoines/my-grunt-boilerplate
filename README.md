@@ -20,16 +20,16 @@ I'll learn yeoman later...
 
 #commands
 
-##c
+#c
 --------------------
 clear console
 
 
-##watch
+#watch
 --------------------
 watch *file* to complie sass with compass
 
 
-##build
+#build
 --------------------
 concat and uglify all js files into single file, also clears console.

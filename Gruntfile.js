@@ -3,8 +3,7 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
 		clear: {
-			//clear terminal on any watch task. beauty.
-			files: ['**/*'], //or be more specific
+			files: ['**/*'],
 			tasks: ['clear']
 		},
 
@@ -45,7 +44,7 @@ module.exports = function(grunt) {
 				}
 			},
 			css: {
-				files: '**/*.scss',
+				files: ['**/*.scss', 'css/main.css'],
 				tasks: ['compass']
 			},
 			options: {
