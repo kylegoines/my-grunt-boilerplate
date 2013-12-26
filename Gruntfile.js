@@ -22,9 +22,9 @@ module.exports = function(grunt) {
 			my_target: {
 				files: {
 					'js/build/production.min.js': ['js/build/production.js']
-					}
 				}
-			},
+			}
+		},
 
 		concat: {
 			dist: {
@@ -50,6 +50,14 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true
 			}
+		},
+
+		cssmin: {
+			combine: {
+				files: {
+					'css/build/main.min.css': ['css/lib/*.css','css/normalize.css','css/*.css']
+				}
+			}
 		}
 
 	});
@@ -60,8 +68,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask('build',['clear','concat','uglify']);
+
+	//register the task
+	//grunt.registerTask('test',['cssmin']);
+	grunt.registerTask('build',['clear','concat','uglify','cssmin']);
 	grunt.registerTask('c',['clear']); // This registers the watch task as the default task. If you require more tasks, create another one
 	grunt.registerTask('default',['watch']); // This registers the watch task as the default task. If you require more tasks, create another one
 
