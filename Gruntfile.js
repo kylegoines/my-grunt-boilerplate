@@ -7,15 +7,21 @@ module.exports = function(grunt) {
 			tasks: ['clear']
 		},
 
-		compass: {
+		sass: {
 			dist: {
-				options: {
-					require: 'susy',
-					sassDir: 'sass',
-					cssDir: 'css',
-					environment: 'production'
+				files: {
+					'css/main.css' : 'sass/main.scss'
 				}
 			}
+		},
+		watch: {
+			css: {
+				files: '**/*.scss',
+				tasks: ['sass']
+			},
+	      options : {
+	        livereload : true
+	      }
 		},
 
 		connect: {
@@ -46,22 +52,6 @@ module.exports = function(grunt) {
 			}
 		},
 
-		watch: {
-			all: {
-				files: 'index.html', // Change this if you are not watching index.html
-				options: {
-					livereload: true
-				}
-			},
-			css: {
-				files: ['**/*.scss', 'css/main.css'],
-				tasks: ['compass']
-			},
-			options: {
-				livereload: true
-			}
-		},
-
 		cssmin: {
 			combine: {
 				files: {
@@ -74,7 +64,7 @@ module.exports = function(grunt) {
 
 	// Load these required NPM tasks:
 	grunt.loadNpmTasks('grunt-clear');
-	grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-concat');
